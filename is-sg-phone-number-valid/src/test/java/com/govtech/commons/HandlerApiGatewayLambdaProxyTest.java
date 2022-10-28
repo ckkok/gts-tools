@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class MainTest {
+public class HandlerApiGatewayLambdaProxyTest {
   @Test
   @DisplayName("Given a valid number, return isValid as true and statusCode 200")
   void givenValidNumberReturnIsValidTrue() {
@@ -21,7 +21,7 @@ public class MainTest {
     when(mockContext.getLogger()).thenReturn(mockLogger);
     var request = new APIGatewayProxyRequestEvent();
     request.setBody("{\"number\":\"91234567\"}");
-    var app = new Main();
+    var app = new HandlerApiGatewayLambdaProxy();
     var response = app.handleRequest(request, mockContext);
     assertEquals(200, response.getStatusCode());
     var responseBody = new JSONObject(response.getBody());

@@ -14,9 +14,11 @@ The libphonenumber library's Java version is the primary version and receives up
 
 - Run `mvn clean package shade:shade`
 - The artifact can then be found at `target/sgphonenumbers-1.0.0.jar`
-- Configure the lambda runtime to be Java 11 (Corretto) and the lambda handler to be `com.govtech.commons.Main::handleRequest`
+- Configure the lambda runtime to be Java 11 (Corretto) and the lambda handler to be `com.govtech.commons.HandlerApiGatewayLambdaProxy::handleRequest`
+  - If your site needs to invoke the API, the value of the environment variable `ACCESS_CONTROL_ALLOW_ORIGIN`, if present, will be set as the response's CORS allowed origin header 
+  - If you use the API Gateway's HTTP API instead, use `com.govtech.commons.HandlerApiGatewayHttp::handleRequest` as the handler
 - Configure the AWS API Gateway Lambda Proxy integration as desired
-  - The handler will try to search for the key `number` in both the query parameters and the request body, so both GET and POST requests are supported
+  - The handler will try to search for the key `number` in both the query parameters and the request body, i.e. both GET and POST requests are supported
 
 Note that once the artifact is built, the actual deployment and configuration steps, e.g. Terraform / AWS Console / Cloudformation are left to the user's choice.
 
@@ -29,12 +31,12 @@ Note that once the artifact is built, the actual deployment and configuration st
 
 ```
 {
-  "phoneNumber": string,
+  "number": string,
   "isValid": boolean
 }
 ```
 
-- `phoneNumber`: the given phone number string to be validated
+- `number`: the given phone number string to be validated
 - `isValid`: true if the phone number conforms to IMDA's National Numbering Plan, and false otherwise. This does not guarantee that the number is in use.
 
 ## Dependencies
