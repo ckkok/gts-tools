@@ -51,6 +51,10 @@ The response from the function is of the form
 - If deployed as an API Gateway-integrated Lambda function without the above-mentioned data caching, consider securing your API with the necessary resource policies, ACLs, throttling policies, or API keys and usage plans to avoid inadvertently placing undue load on upstream resources.
 - The MOM data source is much quicker, roughly 10x lower response times, than the data.gov.sg API.
 
+## Testing and Coverage
+
+Run `npm run test` to run the integration tests and generate code coverage reports.
+
 ## Data Sources
 
 - MOM: iCal files are downloaded from [https://www.mom.gov.sg/employment-practices/public-holidays](https://www.mom.gov.sg/employment-practices/public-holidays). Provides data between 2018 and 2023 (inclusive)

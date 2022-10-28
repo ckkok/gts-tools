@@ -9,7 +9,6 @@ public class HandlerApiGatewayHttp implements RequestHandler<APIGatewayV2HTTPEve
 
   @Override
   public APIGatewayV2HTTPResponse handleRequest(APIGatewayV2HTTPEvent request, Context context) {
-    System.out.println(request);
     var number = Util.getNumberFromRequest(request.getQueryStringParameters(), request.getBody());
     var validationResult = Util.validateNumber(number, context.getLogger());
     var response = new APIGatewayV2HTTPResponse();

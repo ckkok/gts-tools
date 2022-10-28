@@ -5,7 +5,7 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
 
-import java.util.HashMap;
+import java.util.Map;
 
 public class HandlerApiGatewayLambdaProxy implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
 
@@ -18,9 +18,7 @@ public class HandlerApiGatewayLambdaProxy implements RequestHandler<APIGatewayPr
     response.setBody(validationResult.toString());
     var corsHeaderValue = System.getenv("ACCESS_CONTROL_ALLOW_ORIGIN");
     if (corsHeaderValue != null && corsHeaderValue.length() > 0) {
-      var headers = new HashMap<String, String>();
-      headers.put("Access-Control-Allow-Origin", corsHeaderValue);
-      response.setHeaders(headers);
+      response.setHeaders(Map.of("Access-Control-Allow-Origin", corsHeaderValue));
     }
     return response;
   }
