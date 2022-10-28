@@ -23,6 +23,10 @@ The libphonenumber library's Java version is the primary version and receives up
 
 Note that once the artifact is built, the actual deployment and configuration steps, e.g. Terraform / AWS Console / Cloudformation are left to the user's choice.
 
+## Testing and Code Coverage
+
+Run `mvn verify` to run tests and generate code coverage reports.
+
 ### Remarks
 
 - Phone numbers are masked to show only the last 4 digits in logs within the lambda if they are logged out.
