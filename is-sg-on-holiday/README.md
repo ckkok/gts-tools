@@ -47,7 +47,7 @@ The response from the function is of the form
 ### Remarks
 
 - Not passing in any input to the `isPublicHoliday` function will cause it to use the current date instead.
-- **You should probably cache the downloaded data and the results somewhere. Holidays don't change often.** This implementation is left to the individual user as infrequent usage may not justify the expense.
+- **You should probably cache the downloaded data and the results somewhere. Holidays don't change often.** The default behaviour of the application is to cache this in memory. Refining of this implementation is left to the individual user as infrequent usage may not justify further expense.
 - If deployed as an API Gateway-integrated Lambda function without the above-mentioned data caching, consider securing your API with the necessary resource policies, ACLs, throttling policies, or API keys and usage plans to avoid inadvertently placing undue load on upstream resources.
 - The MOM data source is much quicker, roughly 10x lower response times, than the data.gov.sg API.
 
