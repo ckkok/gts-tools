@@ -19,8 +19,13 @@ The libphonenumber library's Java version is the primary version and receives up
   - If you use the API Gateway's HTTP API instead, use `com.govtech.commons.HandlerApiGatewayHttp::handleRequest` as the handler
 - Configure the AWS API Gateway Lambda Proxy integration as desired
   - The handler will try to search for the key `number` in both the query parameters and the request body, i.e. both GET and POST requests are supported
+  - You may wish to restrict API access to POST requests only to avoid inadvertently logging out phone numbers in query parameters
 
 Note that once the artifact is built, the actual deployment and configuration steps, e.g. Terraform / AWS Console / Cloudformation are left to the user's choice.
+
+### Remarks
+
+- Phone numbers are masked to show only the last 4 digits in logs within the lambda if they are logged out.
 
 ## Calling the AWS Lambda Function
 
