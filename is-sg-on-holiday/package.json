@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "update": "node update_data.js",
     "test": "nyc mocha \"tests/**/*.test.js\""
   },
   "keywords": [],

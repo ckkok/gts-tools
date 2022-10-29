@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/gts-tools.iml" filepath="$PROJECT_DIR$/.idea/gts-tools.iml" />
+      <module fileurl="file://$PROJECT_DIR$/is-sg-phone-number-valid/sgphonenumbers.iml" filepath="$PROJECT_DIR$/is-sg-phone-number-valid/sgphonenumbers.iml" />
+    </modules>
+  </component>
+</project>

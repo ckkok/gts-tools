@@ -1,0 +1,72 @@
+[
+  {
+    "date": "2019-01-01T00:00:00.000Z",
+    "holiday": "New Year's Day",
+    "day": "Tuesday"
+  },
+  {
+    "date": "2019-02-05T00:00:00.000Z",
+    "holiday": "Chinese New Year",
+    "day": "Tuesday"
+  },
+  {
+    "date": "2019-02-06T00:00:00.000Z",
+    "holiday": "Chinese New Year",
+    "day": "Wednesday"
+  },
+  {
+    "date": "2019-04-19T00:00:00.000Z",
+    "holiday": "Good Friday",
+    "day": "Friday"
+  },
+  {
+    "date": "2019-05-01T00:00:00.000Z",
+    "holiday": "Labour Day",
+    "day": "Wednesday"
+  },
+  {
+    "date": "2019-05-19T00:00:00.000Z",
+    "holiday": "Vesak Day",
+    "day": "Sunday"
+  },
+  {
+    "date": "2019-05-20T00:00:00.000Z",
+    "holiday": "Vesak Day",
+    "day": "Monday"
+  },
+  {
+    "date": "2019-06-05T00:00:00.000Z",
+    "holiday": "Hari Raya Puasa",
+    "day": "Wednesday"
+  },
+  {
+    "date": "2019-08-09T00:00:00.000Z",
+    "holiday": "National Day",
+    "day": "Friday"
+  },
+  {
+    "date": "2019-08-11T00:00:00.000Z",
+    "holiday": "Hari Raya Haji",
+    "day": "Sunday"
+  },
+  {
+    "date": "2019-08-12T00:00:00.000Z",
+    "holiday": "Hari Raya Haji",
+    "day": "Monday"
+  },
+  {
+    "date": "2019-10-27T00:00:00.000Z",
+    "holiday": "Deepavali",
+    "day": "Sunday"
+  },
+  {
+    "date": "2019-10-28T00:00:00.000Z",
+    "holiday": "Deepavali",
+    "day": "Monday"
+  },
+  {
+    "date": "2019-12-25T00:00:00.000Z",
+    "holiday": "Christmas Day",
+    "day": "Wednesday"
+  }
+]

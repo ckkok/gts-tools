@@ -1,0 +1,57 @@
+[
+  {
+    "date": "2021-01-01T00:00:00.000Z",
+    "holiday": "New Year's Day",
+    "day": "Friday"
+  },
+  {
+    "date": "2021-02-12T00:00:00.000Z",
+    "holiday": "Chinese New Year",
+    "day": "Friday"
+  },
+  {
+    "date": "2021-02-13T00:00:00.000Z",
+    "holiday": "Chinese New Year",
+    "day": "Saturday"
+  },
+  {
+    "date": "2021-04-02T00:00:00.000Z",
+    "holiday": "Good Friday",
+    "day": "Friday"
+  },
+  {
+    "date": "2021-05-01T00:00:00.000Z",
+    "holiday": "Labour Day",
+    "day": "Saturday"
+  },
+  {
+    "date": "2021-05-13T00:00:00.000Z",
+    "holiday": "Hari Raya Puasa",
+    "day": "Thursday"
+  },
+  {
+    "date": "2021-05-26T00:00:00.000Z",
+    "holiday": "Vesak Day",
+    "day": "Wednesday"
+  },
+  {
+    "date": "2021-07-20T00:00:00.000Z",
+    "holiday": "Hari Raya Haji",
+    "day": "Tuesday"
+  },
+  {
+    "date": "2021-08-09T00:00:00.000Z",
+    "holiday": "National Day",
+    "day": "Monday"
+  },
+  {
+    "date": "2021-11-04T00:00:00.000Z",
+    "holiday": "Deepavali",
+    "day": "Thursday"
+  },
+  {
+    "date": "2021-12-25T00:00:00.000Z",
+    "holiday": "Christmas Day",
+    "day": "Saturday"
+  }
+]

@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 const https = require('https');
 const { MAX_TRIES, SERVER_ERROR_MESSAGE, YEAR_OUT_OF_RANGE_MESSAGE, 
   DATA_NOT_FOUND_MESSAGE, dataSources: _dataSources, daysOfWeek } = require('./constants');
@@ -22,14 +24,7 @@ const dataSources = {
     parseData: JSON.parse
   },
   [mom]: {
-    minYear: 2018,
-    maxYear: 2023,
-    getUrl: year => {
-      if (year >= dataSources[mom].minYear && year <= dataSources[mom].maxYear) {
-        return `https://www.mom.gov.sg/-/media/mom/documents/employment-practices/public-holidays/public-holidays-sg-${year}.ics`;
-      }
-      return null;
-    },
+    getUrl: year => `https://www.mom.gov.sg/-/media/mom/documents/employment-practices/public-holidays/public-holidays-sg-${year}.ics`,
     parseData: rawData => {
       const ICAL = require('./vendor/ical.min.js');
       const component = new ICAL.Component(ICAL.parse(rawData));
@@ -81,35 +76,43 @@ const fetchData = year => {
   if (cachedRawData[year]) {
     return Promise.resolve(cachedRawData[year]);
   }
-  let source = dataGovSg;
+  let source = mom;
   let url = dataSources[source].getUrl(year);
-  if (url === null) {
-    source = mom;
-    url = dataSources[source].getUrl(year);
-  }
-  if (url === null) {
-    return Promise.reject(new Error(YEAR_OUT_OF_RANGE_MESSAGE));
-  }
   return new Promise((resolve, reject) => {
     _doFetch(url, resolve, reject, year, source, 1);
   })
 }
 
-const getActualHolidays = (year, rawData) => {
-  if (cachedActualHolidays[year]) {
-    return cachedActualHolidays[year];
+const getActualHolidays = async (year, rawData, noCache = false) => {
+  const dataFile = path.resolve(__dirname, `data/${year}.json`);
+  if (!noCache) {
+    if (cachedActualHolidays[year]) {
+      return cachedActualHolidays[year];
+    }
+    if (fs.existsSync(dataFile)) {
+      const data = JSON.parse(fs.readFileSync(dataFile, 'utf-8')).map(record => {
+        return {
+          date: new Date(record.date),
+          holiday: record.holiday,
+          day: record.day
+        }
+      })
+      cachedActualHolidays[year] = data;
+      return cachedActualHolidays[year];
+    }
   }
-  if (typeof rawData === 'undefined' || rawData === null) {
-    return null;
+  let data = rawData;
+  if (typeof data === 'undefined' || rawData === null) {
+    data = await fetchData(year);
   }
-  const statedHolidays = rawData.result.records.map(record => {
+  const statedHolidays = data.result.records.map(record => {
     return {
       date: new Date(record.date),
       holiday: record.holiday,
       day: record.day
     }
   });
-  statedHolidays.sort((a, b) => a.date < b.date);
+  statedHolidays.sort((a, b) => a.date < b.date ? -1 : a.date > b.date ? 1 : 0);
   const actualHolidays = [];
   for (let i = 0; i < statedHolidays.length; i++) {
     actualHolidays.push({ ...statedHolidays[i] });
@@ -134,7 +137,9 @@ const getActualHolidays = (year, rawData) => {
       actualHolidays.push(actualHoliday);
     }
   }
+  actualHolidays.sort((a, b) => a.date < b.date ? -1 : a.date > b.date ? 1 : 0);
   cachedActualHolidays[year] = actualHolidays;
+  fs.writeFileSync(dataFile, JSON.stringify(cachedActualHolidays[year], null, 2));
   return cachedActualHolidays[year];
 }
 

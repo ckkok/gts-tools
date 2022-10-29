@@ -1,0 +1,77 @@
+[
+  {
+    "date": "2022-01-01T00:00:00.000Z",
+    "holiday": "New Year's Day",
+    "day": "Saturday"
+  },
+  {
+    "date": "2022-02-01T00:00:00.000Z",
+    "holiday": "Chinese New Year",
+    "day": "Tuesday"
+  },
+  {
+    "date": "2022-02-02T00:00:00.000Z",
+    "holiday": "Chinese New Year",
+    "day": "Wednesday"
+  },
+  {
+    "date": "2022-04-15T00:00:00.000Z",
+    "holiday": "Good Friday",
+    "day": "Friday"
+  },
+  {
+    "date": "2022-05-01T00:00:00.000Z",
+    "holiday": "Labour Day",
+    "day": "Sunday"
+  },
+  {
+    "date": "2022-05-02T00:00:00.000Z",
+    "holiday": "Labour Day",
+    "day": "Monday"
+  },
+  {
+    "date": "2022-05-03T00:00:00.000Z",
+    "holiday": "Hari Raya Puasa",
+    "day": "Tuesday"
+  },
+  {
+    "date": "2022-05-15T00:00:00.000Z",
+    "holiday": "Vesak Day",
+    "day": "Sunday"
+  },
+  {
+    "date": "2022-05-16T00:00:00.000Z",
+    "holiday": "Vesak Day",
+    "day": "Monday"
+  },
+  {
+    "date": "2022-07-10T00:00:00.000Z",
+    "holiday": "Hari Raya Haji",
+    "day": "Sunday"
+  },
+  {
+    "date": "2022-07-11T00:00:00.000Z",
+    "holiday": "Hari Raya Haji",
+    "day": "Monday"
+  },
+  {
+    "date": "2022-08-09T00:00:00.000Z",
+    "holiday": "National Day",
+    "day": "Tuesday"
+  },
+  {
+    "date": "2022-10-24T00:00:00.000Z",
+    "holiday": "Deepavali",
+    "day": "Monday"
+  },
+  {
+    "date": "2022-12-25T00:00:00.000Z",
+    "holiday": "Christmas Day",
+    "day": "Sunday"
+  },
+  {
+    "date": "2022-12-26T00:00:00.000Z",
+    "holiday": "Christmas Day",
+    "day": "Monday"
+  }
+]
